@@ -1,12 +1,16 @@
+import Navbar from './components/navbar/Navbar';
+import Sidebar from './components/sidebar/Sidebar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Dashboard from './pages/dashboard/Dashboard';
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
 import './App.css';
-import Navbar from './components/navbar/Navbar';
-import Sidebar from './components/sidebar/Sidebar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
+
+  document.title = "Admin Dashboard"
 
   const hideSidebar = () => {
     const width = window.innerWidth;
@@ -20,17 +24,22 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='main'>
-        <Sidebar />
-        <div className='content' id='content'>
-          <Navbar />
-          <div className='element container-fluid' onClick={hideSidebar}>
-            <Routes>
-              <Route path='/' element={'home'} />
-            </Routes>
+      <Routes>
+        <Route path='/login' element="Login" />
+        <Route path='/' element={(
+          <div className='main'>
+            <Sidebar />
+            <div className='content' id='content'>
+              <Navbar />
+              <div className='element container-fluid pt-3' onClick={hideSidebar}>
+                <Routes>
+                  <Route path='/' element={<Dashboard />} />
+                </Routes>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        )} />
+      </Routes>
     </BrowserRouter>
   );
 }

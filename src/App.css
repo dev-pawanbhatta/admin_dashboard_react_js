@@ -1,6 +1,7 @@
 .main .content {
   margin-left: 300px;
   transition: 0.2s;
+  background-color: #1418302A;
 }
 
 .main .content .element {

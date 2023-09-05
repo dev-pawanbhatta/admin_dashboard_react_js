@@ -21,7 +21,15 @@ const Navbar = () => {
                 <span className='me-2 fw-bold'>Dashboard</span>
             </div>
             <div>
-                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star me-3"></i>
+                <i className="fa-solid fa-ellipsis-vertical me-3" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                <div className="dropdown">
+                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a className="dropdown-item" href="#">Action</a></li>
+                        <li><a className="dropdown-item" href="#">Another action</a></li>
+                        <li><a className="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     )
