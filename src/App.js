@@ -26,21 +26,24 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/login' element="Login" />
-        <Route path='/' element={(
+        <Route path='*' element={(
           <div className='main'>
             <Sidebar />
             <div className='content' id='content'>
               <Navbar />
-              <div className='element container-fluid pt-3' onClick={hideSidebar}>
+              <div className='element' onClick={hideSidebar}>
                 <Routes>
                   <Route path='/' element={<Dashboard />} />
                 </Routes>
               </div>
+              <footer className='p-2 text-center text-dark' style={{ background: "#f5f5f5", boxShadow: "0px -1px 100px  grey" }}>
+                Copyright © 2023 - All Rights Reserved by Admin Dashboard Template. Designed and Developed by pawanrajbhatta.com.np
+              </footer>
             </div>
           </div>
         )} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 

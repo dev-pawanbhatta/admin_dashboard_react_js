@@ -16,15 +16,26 @@ const Navbar = () => {
                 <span onClick={toggleSidebar} style={{ cursor: "pointer" }}>
                     <i className='fa-solid fa-bars me-3'></i>
                 </span>
-                <Link to={'/'} className='me-2'>Home</Link>
-                <span className='me-2'>/</span>
                 <span className='me-2 fw-bold'>Dashboard</span>
             </div>
-            <div>
-                <i className="fa-solid fa-star me-3"></i>
-                <i className="fa-solid fa-ellipsis-vertical me-3" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></i>
+            <div className='d-flex'>
+                <input className="px-2 me-2 d-none d-sm-block" type="search" placeholder="Search" aria-label="Search" />
                 <div className="dropdown">
-                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <Link target='_blank' to="https://github.com/dev-pawanbhatta/admin_dashboard_react_js">
+                        <i className="fa-solid fa-star text-warning px-3"></i>
+                    </Link>
+                </div>
+                <div className="dropdown">
+                    <i className="fa-solid fa-ellipsis-vertical px-3" id="settings" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <ul className="dropdown-menu" aria-labelledby="settings">
+                        <li><a className="dropdown-item" href="#">Action</a></li>
+                        <li><a className="dropdown-item" href="#">Another action</a></li>
+                        <li><a className="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div className="dropdown">
+                    <i className='fa-solid fa-user px-3' id="profile" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <ul className="dropdown-menu" aria-labelledby="profile">
                         <li><a className="dropdown-item" href="#">Action</a></li>
                         <li><a className="dropdown-item" href="#">Another action</a></li>
                         <li><a className="dropdown-item" href="#">Something else here</a></li>
