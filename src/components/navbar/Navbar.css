@@ -1,0 +1,6 @@
+.content-navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 2px solid rgb(179, 177, 177);
+}

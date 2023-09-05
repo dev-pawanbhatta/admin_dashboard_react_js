@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
+
 import './App.css';
+import Navbar from './components/navbar/Navbar';
+import Sidebar from './components/sidebar/Sidebar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
+
+  const hideSidebar = () => {
+    const width = window.innerWidth;
+    if (width <= 800) {
+      const sidebar = document.getElementById('sidebar')
+      const content = document.getElementById('content')
+      sidebar.classList.add('hidden')
+      content.classList.toggle('visible')
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='main'>
+        <Sidebar />
+        <div className='content' id='content'>
+          <Navbar />
+          <div className='element container-fluid' onClick={hideSidebar}>
+            <Routes>
+              <Route path='/' element={'home'} />
+            </Routes>
+          </div>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
