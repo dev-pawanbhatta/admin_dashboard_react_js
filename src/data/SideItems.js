@@ -1,6 +1,6 @@
 const items = [
     {
-        name: "Dashboard", url: '', hasMenu: true, id: 'dashboard', class: 'home',
+        name: "Dashboard", url: '/', hasMenu: false, id: 'dashboard', class: 'home',
         menu: [
             {
                 name: 'Ecommerce',

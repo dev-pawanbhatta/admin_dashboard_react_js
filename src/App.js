@@ -9,6 +9,9 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import './App.css';
 import NotFound from './pages/NotFound/NotFound';
 import { useState } from 'react';
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
+import ForgotPassword from './pages/forgot-password/ForgotPassword';
 
 function App() {
 
@@ -49,7 +52,9 @@ function App() {
           </div> :
           <BrowserRouter BrowserRouter >
             <Routes>
-              <Route path='/login' element="Login" />
+              <Route path='/login' element={<Login />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/forgot-password' element={<ForgotPassword />} />
               <Route path='*' element={(
                 <div className='main'>
                   <Sidebar />
