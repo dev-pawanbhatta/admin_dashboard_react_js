@@ -3,15 +3,16 @@ const items = [
         name: "Dashboard", url: '', hasMenu: true, id: 'dashboard', class: 'home',
         menu: [
             {
-                name: 'Ecommerce', url: ''
+                name: 'Ecommerce',
+                url: '/'
             },
             {
                 name: 'Analytics',
-                url: ''
+                url: '/analytics'
             },
             {
                 name: 'CRM',
-                url: ''
+                url: '/crm'
             },
         ]
     },
@@ -20,15 +21,15 @@ const items = [
         menu: [
             {
                 name: 'Login',
-                url: ''
+                url: '/login'
             },
             {
                 name: 'Register',
-                url: ''
+                url: '/register'
             },
             {
                 name: 'Forgot Password',
-                url: ''
+                url: '/forgot-password'
             },
         ]
     },

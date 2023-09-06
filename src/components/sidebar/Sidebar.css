@@ -35,6 +35,11 @@
     background: #f1f1f1;
 }
 
+.sidebar .sidebar-body .side-item .menu a.active {
+    background: blue;
+    color: white;
+}
+
 .sidebar .sidebar-body .side-item .menu .menu-items {
     display: none;
 }
@@ -49,6 +54,11 @@
     color: #353537;
     border-radius: 4px;
     padding: 0.4rem;
+}
+
+.sidebar .sidebar-body .side-item .menu .menu-items a.active {
+    color: blue;
+    background-color: white;
 }
 
 @media screen and (max-width:800px) {

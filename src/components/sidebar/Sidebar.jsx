@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import './Sidebar.css'
 
 import Dazelf from '../../assets/images/dazelf.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import SideItems from './../../data/SideItems'
 
@@ -32,6 +32,29 @@ const Sidebar = () => {
     }
 
 
+    const url = useLocation().pathname;
+
+    useEffect(() => {
+        SideItems.map((item, index) => {
+            item['active'] = false
+            if (item.hasMenu) {
+                item.menu.map((i) => {
+                    i['active'] = false
+                    if (i.url === url) {
+                        i['active'] = true
+                        item['active'] = true
+                    }
+                })
+            }
+            else {
+                if (item.url == url) {
+                    item['active'] = true;
+                }
+            }
+        })
+    }, [url])
+
+
     return (
         <aside className='sidebar shadow-sm' id='sidebar'>
             <div className="sidebar-header">
@@ -53,7 +76,7 @@ const Sidebar = () => {
                     SideItems.map((item, index) => (
                         <div className="side-item" key={index}>
                             <div className="menu">
-                                <Link to={item.hasMenu ? '' : item.url} onClick={() => toggleMenu(`${item.id}`, index)}>
+                                <Link className={item.active ? 'active' : ''} to={item.hasMenu ? null : item.url} onClick={() => toggleMenu(`${item.id}`, index)}>
                                     <div>
                                         <i className={`fa-solid fa-${item.class} me-2`}></i>
                                         <b>{item.name}</b>
@@ -76,7 +99,7 @@ const Sidebar = () => {
                                         <div className='menu-items px-4' id={item.id}>
                                             {
                                                 item.menu.map((menu_item, menu_index) => (
-                                                    <Link key={menu_index} to={menu_item.url}>{menu_item.name}</Link>
+                                                    <Link className={menu_item.active ? 'active' : ''} key={menu_index} to={menu_item.url}>{menu_item.name}</Link>
                                                 ))
                                             }
                                         </div> : ''
