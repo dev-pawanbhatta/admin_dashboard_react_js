@@ -1,6 +1,6 @@
 import Navbar from './components/navbar/Navbar';
 import Sidebar from './components/sidebar/Sidebar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/dashboard/Dashboard';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -36,8 +36,8 @@ function App() {
                   <Route path='/' element={<Dashboard />} />
                 </Routes>
               </div>
-              <footer className='p-2 text-center text-dark' style={{ background: "#f5f5f5", boxShadow: "0px -1px 100px  grey" }}>
-                Copyright © 2023 - All Rights Reserved by Admin Dashboard Template. Designed and Developed by pawanrajbhatta.com.np
+              <footer className='p-2 text-center text-dark' >
+                <small>Copyright © 2023. Designed and Developed by <Link target='_blank' to={'https://pawanrajbhatta.com.np'}><b>Pawan Bhatta</b></Link></small>
               </footer>
             </div>
           </div>

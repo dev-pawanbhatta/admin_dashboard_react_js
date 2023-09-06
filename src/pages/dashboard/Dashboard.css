@@ -1,0 +1,69 @@
+.boxes {
+    border: none !important;
+    height: 150px !important;
+    color: #ffffff !important;
+}
+
+.boxes.box-1 {
+    background-image: linear-gradient(to right, #1CA155, #4BD786);
+}
+
+.boxes.box-1 .badge {
+    background: #0f5a2f;
+}
+
+.boxes.box-1 .icon {
+    background: #1CA155;
+    border-radius: 6px;
+}
+
+.boxes.box-2 {
+    background-image: linear-gradient(to right, #B510E2, #EB65FE);
+}
+
+.boxes.box-2 .badge {
+    background: #590e6e;
+}
+
+.boxes.box-2 .icon {
+    border-radius: 6px;
+    background: #B510E2;
+}
+
+.boxes.box-3 {
+    background-image: linear-gradient(to right, #2D79E5, #56A4F2);
+}
+
+.boxes.box-3 .badge {
+    background: #112c52;
+}
+
+.boxes.box-3 .icon {
+    border-radius: 6px;
+    background: #2D79E5;
+}
+
+.boxes.box-4 {
+    background-image: linear-gradient(to right, #E29710, #F1C727);
+}
+
+.boxes.box-4 .badge {
+    background: #3d2c0e;
+}
+
+.boxes.box-4 .icon {
+    border-radius: 6px;
+    background: #E29710;
+}
+
+.boxes-long {
+    border: none !important;
+    height: 320px !important;
+    color: #ffffff !important;
+}
+
+.boxes-long.box-1 {
+    background: #1F5ECE;
+}
+
+.dashboard-table thead tr th {}

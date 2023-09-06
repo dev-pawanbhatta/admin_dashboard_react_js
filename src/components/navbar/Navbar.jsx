@@ -11,7 +11,7 @@ const Navbar = () => {
         content.classList.toggle('visible')
     }
     return (
-        <nav className='content-navbar'>
+        <nav className='content-navbar shadow-sm'>
             <div className='d-flex'>
                 <span onClick={toggleSidebar} style={{ cursor: "pointer" }}>
                     <i className='fa-solid fa-bars me-3'></i>

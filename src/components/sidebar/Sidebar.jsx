@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './Sidebar.css'
 
 import Dazelf from '../../assets/images/dazelf.png'
 import { Link } from 'react-router-dom'
 
-import SideItems from '../items/SideItem'
+import SideItems from './../../data/SideItems'
 
 const Sidebar = () => {
 
@@ -16,16 +16,24 @@ const Sidebar = () => {
         content.classList.toggle('visible')
     }
 
-    function toggleMenu(id) {
+    function toggleMenu(id, index) {
         const element = document.getElementById(`${id}`);
         if (element != undefined) {
             element.classList.toggle('show');
+            if (element.classList.contains('show')) {
+                document.getElementById(`angle-icon-${index}`).classList.remove('fa-angle-right');
+                document.getElementById(`angle-icon-${index}`).classList.add('fa-angle-down');
+            }
+            else {
+                document.getElementById(`angle-icon-${index}`).classList.remove('fa-angle-down');
+                document.getElementById(`angle-icon-${index}`).classList.add('fa-angle-right');
+            }
         }
     }
 
 
-    return (    
-        <aside className='sidebar' id='sidebar'>
+    return (
+        <aside className='sidebar shadow-sm' id='sidebar'>
             <div className="sidebar-header">
                 <div className="wrapper">
                     <div className='d-flex w-100'>
@@ -45,7 +53,7 @@ const Sidebar = () => {
                     SideItems.map((item, index) => (
                         <div className="side-item" key={index}>
                             <div className="menu">
-                                <Link to={item.hasMenu ? '' : item.url} onClick={() => toggleMenu(`${item.id}`)}>
+                                <Link to={item.hasMenu ? '' : item.url} onClick={() => toggleMenu(`${item.id}`, index)}>
                                     <div>
                                         <i className={`fa-solid fa-${item.class} me-2`}></i>
                                         <b>{item.name}</b>
@@ -58,7 +66,7 @@ const Sidebar = () => {
                                         }
                                         {
                                             item.hasMenu ?
-                                                <i className='fa-solid fa-angle-right ms-3' style={{ fontSize: "0.9rem" }}></i>
+                                                <i id={`angle-icon-${index}`} className={`fa-solid fa-angle-right ms-3`} style={{ fontSize: "0.9rem" }}></i>
                                                 : ''
                                         }
                                     </div>

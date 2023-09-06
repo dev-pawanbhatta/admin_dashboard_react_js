@@ -4,6 +4,9 @@
     padding: 1rem;
     /* border-bottom: 2px solid rgb(179, 177, 177); */
     background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 5;
 }
 
 .content-navbar .search-box {
